@@ -28,19 +28,27 @@ function makeBoard(HEIGHT, WIDTH) {
   }
   return board;
   // TODO: set "board" to empty HEIGHT x WIDTH matrix array
+  // COMPLETE
 }
 
 /** makeHtmlBoard: make HTML table and row of column tops. */
 
 function makeHtmlBoard() {
   // TODO: get "htmlBoard" variable from the item in HTML w/ID of "board"
-
+  // COMPLETE
+  const htmlBoard = document.getElementById("board")
   // TODO: add comment for this code
+  // COMPLETE
+  // Create tr element with id of "column-top" and when element is clicked, call handleClick()
   const top = document.createElement("tr");
   top.setAttribute("id", "column-top");
   top.addEventListener("click", handleClick);
 
   // TODO: add comment for this code
+  // COMPLETE
+  // Create td elements #width times with unique ids
+  // Append td elements to tr element
+  // Append tr element to #board
   for (let x = 0; x < WIDTH; x++) {
     const headCell = document.createElement("td");
     headCell.setAttribute("id", x);
@@ -53,17 +61,26 @@ function makeHtmlBoard() {
   // uses WIDTH to create table cells for each row
   for (let y = 0; y < HEIGHT; y++) {
     // TODO: Create a table row element and assign to a "row" variable
+    // COMPLETE
+    const row = document.createElement("tr");
 
     for (let x = 0; x < WIDTH; x++) {
       // TODO: Create a table cell element and assign to a "cell" variable
+      // COMPLETE
+      const cell = document.createElement("td");
 
       // TODO: add an id, y-x, to the above table cell element
       // you'll use this later, so make sure you use y-x
+      // COMPLETE
+      cell.setAttribute("id", `${y}-${x}`);
 
       // TODO: append the table cell to the table row
-
+      // COMPLETE
+      row.append(cell);
     }
     // TODO: append the row to the html board
+    // COMPLETE
+    htmlBoard.append(row);
 
   }
 }
